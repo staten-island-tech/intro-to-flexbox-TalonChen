@@ -1,32 +1,52 @@
 html,
 body,
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font: 62.5%;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 62.5%;
 }
-.market {
-    font-size: 30px;
-    display: flex;
-    justify-content: space-around ;
-    align-items: center;
+.title {
+  text-align: center;
+  font-family: "Syne Mono", monospace;
+  font-weight: 1000;
+  font-style: normal;
+  color: #ff4654;
+}
+.bundle {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .skin {
-    border: 1px solid red;
-    width: 28%;
-
+  width: 22%;
+  color: blue;
 }
-
-.skin1{
-    border: 10px solid black;
-    
+.price {
+  color: white;
+}
+.skin1 {
+  border: 10px solid yellow;
 }
 
 .skin2 {
-    border: 10px solid blue;
+  border: 10px solid blue;
 }
 
 .skin3 {
-    border: 10px solid green;
+  border: 10px solid green;
+}
+
+.skin4 {
+  border: 10px solid red;
 }
