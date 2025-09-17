@@ -10,26 +10,35 @@ body,
 .title {
   text-align: center;
   font-family: "Syne Mono", monospace;
-  font-weight: 1000;
+  font-weight: 2000;
   font-style: normal;
   color: #ff4654;
 }
-.bundle {
+html,
+body,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: 62.5%;
+}
+
+.marketplace {
   font-size: 30px;
+  margin: 2rem auto;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   flex-wrap: wrap;
-  margin: 25px auto;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.bundle {
+  width: 30%;
   padding: 25px;
   border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  border: 10px solid red;
 }
 .skin {
-  width: 22%;
+  width: 30%;
   color: blue;
 }
 .price {
@@ -38,15 +47,6 @@ body,
 .skin1 {
   border: 10px solid yellow;
 }
-
 .skin2 {
   border: 10px solid blue;
-}
-
-.skin3 {
-  border: 10px solid green;
-}
-
-.skin4 {
-  border: 10px solid red;
 }
