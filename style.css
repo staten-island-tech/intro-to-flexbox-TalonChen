@@ -24,6 +24,7 @@ body,
   flex-direction: row;
 }
 .bundle {
+  box-shadow: 5px 5px 10px gray, -5px -5px 10px lightgray;
   color: blue;
   height: 66vh;
   width: 22%;
@@ -164,5 +165,6 @@ body,
 .bundle:hover {
   transform: scale(1.1);
   cursor: pointer;
-  transform: ;
+  transition: all 0.7s ease;
+  box-shadow: ;
 }
