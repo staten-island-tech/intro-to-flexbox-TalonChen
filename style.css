@@ -44,6 +44,9 @@ body,
 }
 
 .skin {
+  font-family: "Syne Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
   width: 100%;
   text-align: center;
   font-size: 2rem;
@@ -54,24 +57,99 @@ body,
   text-align: center;
 }
 .skin1 {
+  border-color: antiquewhite;
+  color: color-mix(in srgb, gold 25%, white 75%);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skin2 {
+  border-color: greenyellow;
+  color: purple;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .skin3 {
+  border-color: rgb(132, 11, 11);
+  color: orange;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .skin4 {
+  border-color: blueviolet;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skin5 {
+  border-color: rgb(241, 154, 168);
+  color: rgb(167, 15, 167);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skin6 {
+  border-color: rgb(177, 243, 255);
+  color: rgb(46, 122, 237);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin7 {
+  border-color: rgb(202, 123, 165);
+  color: palevioletred;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .skin8 {
+  border-color: rgb(50, 12, 86);
+  color: blueviolet;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin9 {
+  border-color: rgb(6, 129, 129);
+  color: teal;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin10 {
+  border-color: gold;
+  color: green;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin11 {
+  border-color: rgb(94, 0, 0);
+  color: red;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin12 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 800px;) {
