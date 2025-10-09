@@ -1,80 +1,80 @@
 const skins = [
   {
-    skinname: "Divergence",
-    price: 8700,
+    name: "Divergence",
+    price: 2175,
     image: "images/divergence.jpg",
     category: "vandal",
   },
   {
-    skinname: "Bubblegum Deathwish",
-    price: 8700,
+    name: "Bubblegum Deathwish",
+    price: 2175,
     image: "images/bubblegum.jpg",
     category: "phantom",
   },
   {
-    skinname: "Doombringer",
-    price: 8700,
+    name: "Doombringer",
+    price: 2175,
     image: "images/doombringer.jpg",
     category: "phantom",
   },
   {
-    skinname: "Evori Dreamwings",
-    price: 9900,
+    name: "Evori Dreamwings",
+    price: 2475,
     image: "images/evori.jpg",
     category: "vandal",
   },
-  { skinname: "EX.O", price: 9500, image: "images/exo.jpg", category: "Knife" },
+  { name: "EX.O", price: 5350, image: "images/exo.jpg", category: "Knife" },
   {
-    skinname: "Kuronami",
-    price: 9500,
+    name: "Kuronami",
+    price: 5350,
     image: "images/kuronami.jpg",
     category: "Knife",
   },
   {
-    skinname: "Mystbloom",
-    price: 8700,
+    name: "Mystbloom",
+    price: 2175,
     image: "images/mystbloom.jpg",
     category: "Phantom",
   },
   {
-    skinname: "Singularity",
-    price: 6700,
+    name: "Singularity",
+    price: 2175,
     image: "images/singularity.jpg",
     category: "Vandal",
   },
   {
-    skinname: "SplashX",
-    price: 6700,
+    name: "SplashX",
+    price: 2175,
     image: "images/splashx.jpg",
     category: "vandal",
   },
   {
-    skinname: "Imperium",
-    price: 8700,
+    name: "Imperium",
+    price: 4350,
     image: "images/imperium.jpg",
     category: "knife",
   },
   {
-    skinname: "Nocturnum",
-    price: 8700,
+    name: "Nocturnum",
+    price: 5350,
     image: "images/nocturnum.jpg",
     category: "knife",
   },
   {
-    skinname: "Sovereign",
-    price: 7100,
+    name: "Sovereign",
+    price: 4350,
     image: "images/sovereign.jpg",
     category: "knife",
   },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
-  { skinname: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
+  { name: "a", price: 0, image: "img" },
 ];
 
 //created array
@@ -84,3 +84,26 @@ const skins = [
 // out card on screen
 //insetadjacenthtml
 //}
+
+//function inject(skins) {
+//query the html where we inject the card
+// const bundle = document.querySelector(".bundle");
+//bundle.insertAdjacentHTML("afterbegin", `<h1>${skins.price}</h1>`);
+//}
+inject(skins[0]);
+inject(skins[0]);
+function inject(skins) {
+  skins.forEach((skin) => {
+    const bundle = document.querySelectorAll(".bundle");
+    bundle.insertAdjacentHTML(
+      "afterbegin",
+      `<div class="bundle skin1">
+    <h2 class="skin">${skin.name}</h2>
+    <img src="${skin.image}"/>
+    <h3 class="price skin">${skin.price}</h3>
+  </div>`
+    );
+  });
+}
+
+inject(skins[0]);
