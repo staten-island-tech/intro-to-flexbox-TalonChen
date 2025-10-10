@@ -61,20 +61,59 @@ const skins = [
     category: "knife",
   },
   {
+    name: "Aemondir",
+    price: 1775,
+    image: "images/aemondir.jpg",
+    category: "vandal",
+  },
+  {
+    name: "Cyrax",
+    price: 2175,
+    image: "images/cyrax.jpg",
+    category: "vandal",
+  },
+  {
+    name: "Helix",
+    price: 1775,
+    image: "images/helix.jpg",
+    category: "phantom",
+  },
+  {
+    name: "Spectrum",
+    price: 2675,
+    image: "images/spectrum.jpg",
+    category: "phantom",
+  },
+  {
+    name: "Origin",
+    price: 1775,
+    image: "images/origin.jpeg",
+    category: "vandal",
+  },
+  {
     name: "Sovereign",
     price: 4350,
     image: "images/sovereign.jpg",
     category: "knife",
   },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
-  { name: "a", price: 0, image: "img" },
+  {
+    name: "Sovereign",
+    price: 4350,
+    image: "images/sovereign.jpg",
+    category: "knife",
+  },
+  {
+    name: "Sovereign",
+    price: 4350,
+    image: "images/sovereign.jpg",
+    category: "knife",
+  },
+  {
+    name: "Sovereign",
+    price: 4350,
+    image: "images/sovereign.jpg",
+    category: "knife",
+  },
 ];
 
 //created array
@@ -90,20 +129,33 @@ const skins = [
 // const bundle = document.querySelector(".bundle");
 //bundle.insertAdjacentHTML("afterbegin", `<h1>${skins.price}</h1>`);
 //}
-inject(skins[0]);
-inject(skins[0]);
-function inject(skins) {
-  skins.forEach((skin) => {
-    const bundle = document.querySelectorAll(".bundle");
-    bundle.insertAdjacentHTML(
-      "afterbegin",
-      `<div class="bundle skin1">
-    <h2 class="skin">${skin.name}</h2>
-    <img src="${skin.image}"/>
-    <h3 class="price skin">${skin.price}</h3>
-  </div>`
-    );
-  });
-}
 
-inject(skins[0]);
+skins.forEach((skin) => {
+  document.querySelector(".marketplace").insertAdjacentHTML(
+    "afterbegin",
+    `<div class="bundle">
+      <h2 class = "skin">${skin.name}</h2>
+      <img src="${skin.image}"/>
+      <h3 class = "price skin">${skin.price}</h3>
+    </div>`
+  );
+});
+
+////function getCards() {
+////const buttons = document.querySelectorAll("button");
+//not needed unless we want filter etc.
+////const btnArr = Array.from(buttons);
+////btnArr.forEach((btn) =>
+////btn.addEventListener("click", function (event) {
+//console.log(event.target);
+////console.log(
+////event.target.closest(".display-card").getAttribute("date-id")
+////);
+////})
+////);
+////}
+////getCards();
+//make array
+//put cards on screen with JS
+//make a cart (HTML, JS) an array
+//add to cart button
