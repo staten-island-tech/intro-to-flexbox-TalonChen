@@ -87,25 +87,25 @@ const skins = [
   {
     name: "Origin",
     price: 1775,
-    image: "images/origin.jpeg",
+    image: "images/origin.jpg",
     category: "vandal",
   },
   {
-    name: "Sovereign",
-    price: 4350,
-    image: "images/sovereign.jpg",
-    category: "knife",
+    name: "Protocol",
+    price: 2475,
+    image: "images/protocol.jpg",
+    category: "phantom",
   },
   {
-    name: "Sovereign",
-    price: 4350,
-    image: "images/sovereign.jpg",
-    category: "knife",
+    name: "Chronovoid",
+    price: 2175,
+    image: "images/chronovoid.jpg",
+    category: "valorant",
   },
   {
-    name: "Sovereign",
+    name: "RGX 11Z PRO",
     price: 4350,
-    image: "images/sovereign.jpg",
+    image: "images/rgx.jpg",
     category: "knife",
   },
   {
@@ -137,24 +137,26 @@ skins.forEach((skin) => {
       <h2 class = "skin">${skin.name}</h2>
       <img src="${skin.image}"/>
       <h3 class = "price skin">${skin.price}</h3>
-    </div>`
+      <h4 class = "cart">Add to Cart</h4>
+    </div>
+    `
   );
 });
 
-////function getCards() {
-////const buttons = document.querySelectorAll("button");
-//not needed unless we want filter etc.
-////const btnArr = Array.from(buttons);
-////btnArr.forEach((btn) =>
-////btn.addEventListener("click", function (event) {
-//console.log(event.target);
-////console.log(
-////event.target.closest(".display-card").getAttribute("date-id")
-////);
-////})
-////);
-////}
-////getCards();
+function getSkins() {
+  const buttons = document.querySelectorAll("button");
+  //not needed unless we want filter etc.
+  const btnArr = Array.from(buttons);
+  btnArr.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      //console.log(event.target);
+      console.log(
+        event.target.closest(".display-card").getAttribute("date-id")
+      );
+    })
+  );
+}
+getSkins();
 //make array
 //put cards on screen with JS
 //make a cart (HTML, JS) an array
