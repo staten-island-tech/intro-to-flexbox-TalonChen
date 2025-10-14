@@ -143,20 +143,27 @@ skins.forEach((skin) => {
   );
 });
 
+const btn = document.querySelector(".btn");
+
 function getSkins() {
-  const buttons = document.querySelectorAll("button");
-  //not needed unless we want filter etc.
-  const btnArr = Array.from(buttons);
-  btnArr.forEach((btn) =>
-    btn.addEventListener("click", function (event) {
-      //console.log(event.target);
-      console.log(
-        event.target.closest(".display-card").getAttribute("date-id")
-      );
-    })
-  );
+  const cart = document.querySelector(".cart");
+  document.querySelector("h2").textContent = `(
+  ${skins.name})`;
 }
-getSkins();
+////function getCards() {
+////const buttons = document.querySelectorAll("button");
+//not needed unless we want filter etc.
+////const btnArr = Array.from(buttons);
+////btnArr.forEach((btn) =>
+////btn.addEventListener("click", function (event) {
+//console.log(event.target);
+////console.log(
+////event.target.closest(".display-card").getAttribute("date-id")
+////);
+////})
+////);
+////}
+////getCards();
 //make array
 //put cards on screen with JS
 //make a cart (HTML, JS) an array
