@@ -8,18 +8,14 @@ body,
   font: 62.5%;
 }
 
-.box {
-  width: 600px;
-  height: 600px;
-}
-
 .categories {
-  color: white;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: ;
 }
 
 .title {
-  size: ;
   text-align: center;
   font-family: "Syne Mono", monospace;
   font-weight: 400;

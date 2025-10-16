@@ -137,34 +137,34 @@ skins.forEach((skin) => {
       <h2 class = "skin">${skin.name}</h2>
       <img src="${skin.image}"/>
       <h3 class = "price skin">${skin.price}</h3>
-      <h4 class = "cart">Add to Cart</h4>
+      <button class = "btn skin">Add to Cart</button>
     </div>
     `
   );
 });
 
-const btn = document.querySelector(".btn");
-
 function getSkins() {
-  const cart = document.querySelector(".cart");
-  document.querySelector("h2").textContent = `(
-  ${skins.name})`;
+  const buttons = document.querySelectorAll(".btn");
+  //not needed unless we want filter etc.
+  const btnArr = Array.from(buttons);
+  btnArr.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      //console.log(event.target);
+      console.log(
+        event.target.closest(".marketplace").getAttribute("skins-name"),
+        event.target.textContent
+      );
+    })
+  );
 }
-////function getCards() {
-////const buttons = document.querySelectorAll("button");
-//not needed unless we want filter etc.
-////const btnArr = Array.from(buttons);
-////btnArr.forEach((btn) =>
-////btn.addEventListener("click", function (event) {
-//console.log(event.target);
-////console.log(
-////event.target.closest(".display-card").getAttribute("date-id")
-////);
-////})
-////);
-////}
-////getCards();
+getSkins();
 //make array
+
+//find item in array, .find("name")
+//push item to cart
+//show cart
+//totale cart
+
 //put cards on screen with JS
 //make a cart (HTML, JS) an array
 //add to cart button
