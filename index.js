@@ -3,13 +3,13 @@ const skins = [
     name: "Divergence",
     price: 2175,
     image: "images/divergence.jpg",
-    category: "vandal",
+    category: "vandal all",
   },
   {
     name: "Bubblegum Deathwish",
     price: 2175,
     image: "images/bubblegum.jpg",
-    category: "phantom",
+    category: "phantom all",
   },
   {
     name: "Doombringer",
@@ -21,98 +21,98 @@ const skins = [
     name: "Evori Dreamwings",
     price: 2475,
     image: "images/evori.jpg",
-    category: "vandal",
+    category: "vandal all",
   },
   { name: "EX.O", price: 5350, image: "images/exo.jpg", category: "Knife" },
   {
     name: "Kuronami",
     price: 5350,
     image: "images/kuronami.jpg",
-    category: "Knife",
+    category: "Knife all",
   },
   {
     name: "Mystbloom",
     price: 2175,
     image: "images/mystbloom.jpg",
-    category: "Phantom",
+    category: "phantom all",
   },
   {
     name: "Singularity",
     price: 2175,
     image: "images/singularity.jpg",
-    category: "Vandal",
+    category: "vandal all",
   },
   {
     name: "SplashX",
     price: 2175,
     image: "images/splashx.jpg",
-    category: "vandal",
+    category: "vandal all",
   },
   {
     name: "Imperium",
     price: 4350,
     image: "images/imperium.jpg",
-    category: "knife",
+    category: "knife all",
   },
   {
     name: "Nocturnum",
     price: 5350,
     image: "images/nocturnum.jpg",
-    category: "knife",
+    category: "knife all",
   },
   {
     name: "Aemondir",
     price: 1775,
     image: "images/aemondir.jpg",
-    category: "vandal",
+    category: "vandal all",
   },
   {
     name: "Cyrax",
     price: 2175,
     image: "images/cyrax.jpg",
-    category: "vandal",
+    category: "vandal all",
   },
   {
     name: "Helix",
     price: 1775,
     image: "images/helix.jpg",
-    category: "phantom",
+    category: "phantom all",
   },
   {
     name: "Spectrum",
     price: 2675,
     image: "images/spectrum.jpg",
-    category: "phantom",
+    category: "phantom all",
   },
   {
     name: "Origin",
     price: 1775,
     image: "images/origin.jpg",
-    category: "vandal",
+    category: "vandal all",
   },
   {
     name: "Protocol",
     price: 2475,
     image: "images/protocol.jpg",
-    category: "phantom",
+    category: "phantom all",
   },
   {
     name: "Chronovoid",
     price: 2175,
     image: "images/chronovoid.jpg",
-    category: "valorant",
+    category: "vandal all",
   },
   {
     name: "RGX 11Z PRO",
     price: 4350,
     image: "images/rgx.jpg",
-    category: "knife",
+    category: "knife all",
   },
   {
     name: "Sovereign",
     price: 4350,
     image: "images/sovereign.jpg",
-    category: "knife",
+    category: "knife all",
   },
 ];
 
@@ -133,7 +133,7 @@ const skins = [
 skins.forEach((skin) => {
   document.querySelector(".marketplace").insertAdjacentHTML(
     "afterbegin",
-    `<div class="bundle">
+    `<div class="bundle category = ${skin.category}">
       <h2 class = "skin">${skin.name}</h2>
       <img src="${skin.image}"/>
       <h3 class = "price skin">${skin.price}</h3>
@@ -142,7 +142,7 @@ skins.forEach((skin) => {
     `
   );
 });
-
+```
 function getSkins() {
   const buttons = document.querySelectorAll(".btn");
   //not needed unless we want filter etc.
@@ -157,7 +157,21 @@ function getSkins() {
     })
   );
 }
-getSkins();
+getSkins(); ```;
+
+function filterByCategory(category) {
+  const skins = document.querySelectorAll(".categories");
+  skins.forEach((skin) => {
+    const skinCategory = skin.getAttribute("category");
+    if (skinCategory === category || skinCategory === "all") {
+      card.style.display = "flex"; //contextual - be consistent
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+filterByGenre("vandal");
+
 //make array
 
 //find item in array, .find("name")
