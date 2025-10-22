@@ -155,14 +155,65 @@ for (let i = 0; i < buttons.length; i++) {
     filterByCategory(category);
   });
 }
+```
+function filterByCategory(category) {
+  const bundles = document.querySelectorAll(".bundle");
+  skins.forEach((bundle) => {
+    const skinCategory = skin.getAttribute("category");
+    if (skinCategory === category || skinCategory === "all") {
+      card.style.display = "flex"; //contextual - be consistent
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
 
-//make array
+//created array
+//find the container - querySelector
+//create function to add 1 card to screen
+// function inject(skins) {
+// out card on screen
+//insetadjacenthtml
+//}
 
-//find item in array, .find("name")
-//push item to cart
-//show cart
-//totale cart
+//function inject(skins) {
+//query the html where we inject the card
+// const bundle = document.querySelector(".bundle");
+//bundle.insertAdjacentHTML("afterbegin", `//} ///<h1>${skins.price}</h1>`);
+```
+skins.forEach((skin) => {
+  document.querySelector(".marketplace").insertAdjacentHTML(
+    "afterbegin",
+    `//<button class = "btn skin">Add to Cart</button> //<h3 class = "price skin">${skin.price}</h3> //<img src="${skin.image}"/> //<h2 class = "skin">${skin.name}</h2> //<div class="bundle category = ${skin.category}">
+//</div>
+//`
+//);
+//});
 
-//put cards on screen with JS
-//make a cart (HTML, JS) an array
-//add to cart button
+```
+function getSkins() {
+  const buttons = document.querySelectorAll(".btn");
+  //not needed unless we want filter etc.
+  const btnArr = Array.from(buttons);
+  btnArr.forEach((btn) =>
+    btn.addEventListener("click", function (event) {
+      //console.log(event.target);
+      console.log(
+        event.target.closest(".marketplace").getAttribute("skins-name"),
+        event.target.textContent
+      );
+    })
+  );
+}
+
+make array
+find item in array, .find("name")
+push item to cart
+show cart
+totale cart
+
+put cards on screen with JS
+make a cart (HTML, JS) an array
+add to cart button
+
+```;
