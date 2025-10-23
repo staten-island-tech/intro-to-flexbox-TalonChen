@@ -136,7 +136,7 @@ function getSkins(skins) {
 }
 
 getSkins(skins);
-
+`
 function filterByCategory(category) {
   const bundles = document.querySelectorAll(".bundle");
   for (let i = 0; i < bundles.length; i++) {
@@ -148,13 +148,27 @@ function filterByCategory(category) {
     }
   }
 }
-
+`;
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
     const category = buttons[i].innerHTML.toLowerCase();
     filterByCategory(category);
   });
 }
+
+function filterByCategory(category) {
+  const bundles = document.querySelectorAll(".bundle");
+  skins.forEach((skin) => {
+    const skinCategory = skin.getAttribute("data-category");
+    if (skinCategory === category || skinCategory === "all") {
+      card.style.display = "flex"; //contextual - be consistent
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+filterByCategory("vandal");
+
 ```
 function filterByCategory(category) {
   const bundles = document.querySelectorAll(".bundle");
@@ -179,17 +193,12 @@ function filterByCategory(category) {
 //function inject(skins) {
 //query the html where we inject the card
 // const bundle = document.querySelector(".bundle");
-//bundle.insertAdjacentHTML("afterbegin", `//} ///<h1>${skins.price}</h1>`);
+//bundle.insertAdjacentHTML("afterbegin", ` //} ///<h1>${skins.price}</h1>`);
 ```
 skins.forEach((skin) => {
   document.querySelector(".marketplace").insertAdjacentHTML(
     "afterbegin",
-    `//<button class = "btn skin">Add to Cart</button> //<h3 class = "price skin">${skin.price}</h3> //<img src="${skin.image}"/> //<h2 class = "skin">${skin.name}</h2> //<div class="bundle category = ${skin.category}">
-//</div>
-//`
-//);
-//});
-
+    ` //}); //); //` //</div> //<button class = "btn skin">Add to Cart</button> //<h3 class = "price skin">${skin.price}</h3> //<img src="${skin.image}"/> //<h2 class = "skin">${skin.name}</h2> //<div class="bundle category = ${skin.category}">
 ```
 function getSkins() {
   const buttons = document.querySelectorAll(".btn");
@@ -215,5 +224,22 @@ totale cart
 put cards on screen with JS
 make a cart (HTML, JS) an array
 add to cart button
+
+```;
+
+```
+
+function filterByCategory((fill in)) {
+  const (fill in) = document.querySelectorAll("(fill in)")
+  (fill in).forEach(((fill in)) => {
+    const (fill in) = (fill in).dataset.(fill in)
+    if ((fill in) === (fill in) || (fill in) === "all"){
+      (fill in).style.display = "flex";
+    } else {
+      (fill in).style.display = "none"
+    }
+  });
+}
+
 
 ```;
