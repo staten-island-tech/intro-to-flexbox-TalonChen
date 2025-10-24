@@ -158,8 +158,8 @@ for (let i = 0; i < buttons.length; i++) {
 
 function filterByCategory(category) {
   const bundles = document.querySelectorAll(".bundle");
-  skins.forEach((skin) => {
-    const skinCategory = skin.getAttribute("data-category");
+  bundles.forEach((bundle) => {
+    const skinCategory = bundles.getAttribute("data-category");
     if (skinCategory === category || skinCategory === "all") {
       card.style.display = "flex"; //contextual - be consistent
     } else {
@@ -167,9 +167,8 @@ function filterByCategory(category) {
     }
   });
 }
-filterByCategory("vandal");
 
-```
+`
 function filterByCategory(category) {
   const bundles = document.querySelectorAll(".bundle");
   skins.forEach((bundle) => {
@@ -190,16 +189,6 @@ function filterByCategory(category) {
 //insetadjacenthtml
 //}
 
-//function inject(skins) {
-//query the html where we inject the card
-// const bundle = document.querySelector(".bundle");
-//bundle.insertAdjacentHTML("afterbegin", ` //} ///<h1>${skins.price}</h1>`);
-```
-skins.forEach((skin) => {
-  document.querySelector(".marketplace").insertAdjacentHTML(
-    "afterbegin",
-    ` //}); //); //` //</div> //<button class = "btn skin">Add to Cart</button> //<h3 class = "price skin">${skin.price}</h3> //<img src="${skin.image}"/> //<h2 class = "skin">${skin.name}</h2> //<div class="bundle category = ${skin.category}">
-```
 function getSkins() {
   const buttons = document.querySelectorAll(".btn");
   //not needed unless we want filter etc.
@@ -225,9 +214,6 @@ put cards on screen with JS
 make a cart (HTML, JS) an array
 add to cart button
 
-```;
-
-```
 
 function filterByCategory((fill in)) {
   const (fill in) = document.querySelectorAll("(fill in)")
@@ -242,4 +228,4 @@ function filterByCategory((fill in)) {
 }
 
 
-```;
+`;
