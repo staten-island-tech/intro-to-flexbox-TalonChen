@@ -136,37 +136,25 @@ function getSkins(skins) {
 }
 
 getSkins(skins);
-`
-function filterByCategory(category) {
-  const bundles = document.querySelectorAll(".bundle");
-  for (let i = 0; i < bundles.length; i++) {
-    const skinCategory = bundles[i].getAttribute("data-category");
-    if (category === "all" || category === skinCategory) {
-      bundles[i].style.display = "flex";
-    } else {
-      bundles[i].style.display = "none";
-    }
-  }
-}
-`;
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function () {
-    const category = buttons[i].innerHTML.toLowerCase();
-    filterByCategory(category);
-  });
-}
 
-function filterByCategory(category) {
-  const bundles = document.querySelectorAll(".bundle");
-  bundles.forEach((bundle) => {
-    const skinCategory = bundles.getAttribute("data-category");
-    if (skinCategory === category || skinCategory === "all") {
-      card.style.display = "flex"; //contextual - be consistent
+const filterbuttons = document.querySelectorAll(".categories"); // Target the buttons with class 'categories'
+
+filterbuttons.forEach((button) =>
+  button.addEventListener("click", function (event) {
+    const category = event.target.textContent.toLowerCase(); // Get the button text and convert to lowercase
+
+    if (category === "all") {
+      // If "All" is clicked, show all skins
+      filteredSkins = skins;
     } else {
-      card.style.display = "none";
+      // Otherwise, filter the 'skins' array based on the category
+      filteredSkins = skins.filter((skin) => skin.category === category);
     }
-  });
-}
+
+    // Call your existing function to re-render the marketplace with the filtered list
+    getSkins(filteredSkins);
+  })
+);
 
 `
 function filterByCategory(category) {
