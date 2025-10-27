@@ -128,7 +128,7 @@ function getSkins(skins) {
         <h2 class = "skin">${skin.name}</h2>
         <img src="${skin.image}" alt = ${skin.name} />
         <h3 class = "price skin">${skin.price}</h3>
-        <button class = "btn skin">Add to Cart</button>
+        <button class = "btn skin cart">Add to Cart</button>
       </div>
       `
     );
@@ -137,21 +137,41 @@ function getSkins(skins) {
 
 getSkins(skins);
 
-const filterbuttons = document.querySelectorAll(".categories"); // Target the buttons with class 'categories'
+function getSkinData() {
+  const skinData = skins.find((skin) => skin.name === cartName);
+  if (skinData) {
+    cart.push(skinData);
+    document.querySelector("cart-items").insertAdjacentHTML(
+      "afterbegin",
+      `
+        <p>${skinData.name} - ${skinData.price} Valorant Points </p>
+        `
+    );
+  }
+}
+
+const cart = [];
+let total = 0;
+document.addEventListener("click", function (click) {
+  if (click.target.classList.contains("cart")) {
+    const cartName = click.target.dataset.name;
+    total += skins.price;
+    document.querySelector(
+      "total-price"
+    ).innerHTML = `<h3>${total} Valorant Points</h3>`;
+  }
+});
+
+const filterbuttons = document.querySelectorAll(".categories");
 
 filterbuttons.forEach((button) =>
   button.addEventListener("click", function (event) {
-    const category = event.target.textContent.toLowerCase(); // Get the button text and convert to lowercase
-
+    const category = event.target.textContent.toLowerCase();
     if (category === "all") {
-      // If "All" is clicked, show all skins
       filteredSkins = skins;
     } else {
-      // Otherwise, filter the 'skins' array based on the category
       filteredSkins = skins.filter((skin) => skin.category === category);
     }
-
-    // Call your existing function to re-render the marketplace with the filtered list
     getSkins(filteredSkins);
   })
 );

@@ -12,6 +12,22 @@ body,
   color: greenyellow;
 }
 
+.cartTitle {
+  width: 45%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 1rem;
+  margin: 5rem auto;
+  border-radius: 5px;
+  border: 1px solid blue;
+  transition: 0.6s ease;
+  color: greenyellow;
+  font-size: 100px;
+}
+
 .contain {
   width: 90%;
   box-sizing: border-box;
@@ -35,7 +51,6 @@ body,
   padding: 1rem;
   margin: 5rem auto;
   border-radius: 5px;
-
   transition: 0.6s ease;
 }
 
