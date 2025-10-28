@@ -128,7 +128,7 @@ function getSkins(skins) {
         <h2 class = "skin">${skin.name}</h2>
         <img src="${skin.image}" alt = ${skin.name} />
         <h3 class = "price skin">${skin.price}</h3>
-        <button class = "btn skin cart">Add to Cart</button>
+        <button class = "btn skin add" data-name="${skin.name}">Add to Cart</button>
       </div>
       `
     );
@@ -136,31 +136,6 @@ function getSkins(skins) {
 }
 
 getSkins(skins);
-
-function getSkinData() {
-  const skinData = skins.find((skin) => skin.name === cartName);
-  if (skinData) {
-    cart.push(skinData);
-    document.querySelector("cart-items").insertAdjacentHTML(
-      "afterbegin",
-      `
-        <p>${skinData.name} - ${skinData.price} Valorant Points </p>
-        `
-    );
-  }
-}
-
-const cart = [];
-let total = 0;
-document.addEventListener("click", function (click) {
-  if (click.target.classList.contains("cart")) {
-    const cartName = click.target.dataset.name;
-    total += skins.price;
-    document.querySelector(
-      "total-price"
-    ).innerHTML = `<h3>${total} Valorant Points</h3>`;
-  }
-});
 
 const filterbuttons = document.querySelectorAll(".categories");
 
@@ -176,64 +151,30 @@ filterbuttons.forEach((button) =>
   })
 );
 
-`
-function filterByCategory(category) {
-  const bundles = document.querySelectorAll(".bundle");
-  skins.forEach((bundle) => {
-    const skinCategory = skin.getAttribute("category");
-    if (skinCategory === category || skinCategory === "all") {
-      card.style.display = "flex"; //contextual - be consistent
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
+const cart = [];
+let total = 0;
 
-//created array
-//find the container - querySelector
-//create function to add 1 card to screen
-// function inject(skins) {
-// out card on screen
-//insetadjacenthtml
-//}
+document.addEventListener("click", function (click) {
+  if (click.target.classList.contains("add")) {
+    // Get the skin's name
+    const skinName = click.target.dataset.name;
+    // Find the corresponding skin object in the array
+    const skinData = skins.find((s) => s.name === skinName);
 
-function getSkins() {
-  const buttons = document.querySelectorAll(".btn");
-  //not needed unless we want filter etc.
-  const btnArr = Array.from(buttons);
-  btnArr.forEach((btn) =>
-    btn.addEventListener("click", function (event) {
-      //console.log(event.target);
-      console.log(
-        event.target.closest(".marketplace").getAttribute("skins-name"),
-        event.target.textContent
+    if (skinData) {
+      // Cart items
+      cart.push(skinData);
+      document.querySelector(".cartItems").insertAdjacentHTML(
+        "afterbegin",
+        `
+        <p>${skinData.name} - ${skinData.price} VP</p>
+        `
       );
-    })
-  );
-}
-
-make array
-find item in array, .find("name")
-push item to cart
-show cart
-totale cart
-
-put cards on screen with JS
-make a cart (HTML, JS) an array
-add to cart button
-
-
-function filterByCategory((fill in)) {
-  const (fill in) = document.querySelectorAll("(fill in)")
-  (fill in).forEach(((fill in)) => {
-    const (fill in) = (fill in).dataset.(fill in)
-    if ((fill in) === (fill in) || (fill in) === "all"){
-      (fill in).style.display = "flex";
-    } else {
-      (fill in).style.display = "none"
+      //Price
+      total += skinData.price;
+      document.querySelector(
+        ".totalPrice"
+      ).innerHTML = `<h3>Total: ${total} VP</h3>`;
     }
-  });
-}
-
-
-`;
+  }
+});
