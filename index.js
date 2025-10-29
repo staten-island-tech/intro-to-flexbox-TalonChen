@@ -203,9 +203,3 @@ document.addEventListener("click", function (click) {
     }
   }
 });
-
-skins.forEach((skin) => {
-  for (let i = 0; i < 0; i++) {
-    let skinCustomize = document.querySelector;
-  }
-});
