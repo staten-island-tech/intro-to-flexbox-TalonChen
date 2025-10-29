@@ -12,7 +12,7 @@ body,
   color: greenyellow;
 }
 
-.items{
+.items {
   color: green;
   box-sizing: border-box;
   display: flex;
@@ -22,14 +22,14 @@ body,
   align-items: center;
   padding: 1rem;
   margin: 5rem auto;
-  border-radius: 5px; 
+  border-radius: 5px;
   border: 1px solid blue;
   transition: 0.6s ease;
   width: 85%;
   font-size: 50px;
 }
 
-.cart{
+.cart {
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -237,6 +237,70 @@ body,
   align-items: center;
 }
 .skin12 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin13 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin14 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin15 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin16 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin17 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin18 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin19 {
+  border-color: bisque;
+  color: rgb(209, 209, 108);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skin20 {
   border-color: bisque;
   color: rgb(209, 209, 108);
   position: relative;
