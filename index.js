@@ -179,15 +179,12 @@ filterbuttons.forEach((button) =>
 const cart = [];
 let total = 0;
 
-document.addEventListener("click", function (click) {
-  if (click.target.classList.contains("add")) {
-    // Get the skin's name
-    const skinName = click.target.dataset.name;
-    // Find the corresponding skin object in the array
-    const skinData = skins.find((s) => s.name === skinName);
+document.addEventListener("click", function (find) {
+  if (find.target.classList.contains("add")) {
+    const skinName = find.target.dataset.name;
+    const skinData = skins.find((skin) => skin.name === skinName);
 
     if (skinData) {
-      // Cart items
       cart.push(skinData);
       document.querySelector(".cartItems").insertAdjacentHTML(
         "beforeend",
@@ -195,7 +192,6 @@ document.addEventListener("click", function (click) {
         <p>${skinData.name} - ${skinData.price} VP</p>
         `
       );
-      //Price
       total += skinData.price;
       document.querySelector(
         ".totalPrice"
